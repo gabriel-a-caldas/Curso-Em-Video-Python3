@@ -9,3 +9,12 @@
 
 numero = str(input('Insira um número: '))
 
+primeiroDigito = numero[0]
+segundoDigito = numero[1]
+terceiroDigito = numero[2]
+quartoDigito = numero[3]
+
+print(f'Unidade: {quartoDigito}')
+print(f'Dezena: {terceiroDigito}')
+print(f'Centena: {segundoDigito}')
+print(f'Milhar: {primeiroDigito}')
