@@ -4,7 +4,7 @@
 
 # O programa deverá escrever na tela se o usuário venceu ou perdeu.
 
-from random import randint, random, randrange
+from random import randint
 
 numeroAleatorio = randint(0,5)
 
