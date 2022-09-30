@@ -4,7 +4,7 @@
 # Quantas letras ao todo (sem considerar espaços)
 # Quantas letras tem o primeiro nome
 
-nomeCompleto = str(input("Informe o seu nome: "))
+nomeCompleto = str(input("Informe o seu nome: ")).strip()
 
 nomeMaiusculas = nomeCompleto.upper()
 nomeMinusculas = nomeCompleto.lower()
