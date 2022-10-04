@@ -17,9 +17,9 @@ listaOpcoesSistema = ['PEDRA', 'PAPEL', 'TESOURA']
 
 escolhaDoSistema = choice(listaOpcoesSistema)
 
-if escolhaDoSistema == 'PEDRA' and escolha == 'PAPEL' or escolhaDoSistema == 'PAPEL' and escolha == 'TESOURA' or escolhaDoSistema == 'TESOURA' and escolha == 'PEDRA':
+if (escolhaDoSistema == 'PEDRA' and escolha == 'PAPEL') or (escolhaDoSistema == 'PAPEL' and escolha == 'TESOURA') or (escolhaDoSistema == 'TESOURA' and escolha == 'PEDRA'):
     print(f'Ah não...Você ganhou! \nEU: {escolhaDoSistema} x \nVocê: {escolha} \nO vencedor é: {escolha}') # VITORIA DO JOGADOR
-elif escolhaDoSistema == 'PAPEL' and escolha == 'PEDRA' or escolhaDoSistema == 'PEDRA' and escolha == 'TESOURA' or escolhaDoSistema == 'TESOURA' and escolha == 'PAPEL':
+elif (escolhaDoSistema == 'PAPEL' and escolha == 'PEDRA') or (escolhaDoSistema == 'PEDRA' and escolha == 'TESOURA') or (escolhaDoSistema == 'TESOURA' and escolha == 'PAPEL'):
     print(f'GANHEI (¬‿¬)! \nUm mero humano não pode superar uma máquina! \nEU: {escolhaDoSistema} x \nVocê{escolha} \n O vencedor é: {escolhaDoSistema}') # VITORIA DO SISTEMA
-elif escolhaDoSistema == 'PEDRA' and escolha == 'PEDRA' or escolhaDoSistema == 'PAPEL' and escolha == 'PAPEL' or escolhaDoSistema == 'TESOURA' and escolha == 'TESOURA':
+elif (escolhaDoSistema == 'PEDRA' and escolha == 'PEDRA') or (escolhaDoSistema == 'PAPEL' and escolha == 'PAPEL') or (escolhaDoSistema == 'TESOURA' and escolha == 'TESOURA'):
     print(f'Vamos refazer... \nEU: {escolhaDoSistema} x \nVocê: {escolha} é emapte!') # EMPATE
