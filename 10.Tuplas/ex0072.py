@@ -1,15 +1,30 @@
 """
-Crie um programa que tenha uma tupla totalmente preenchida com uma contagem
-por extenso, de zero até vinte.
+Crie uma tupla preenchida com os 20 primerios colocados da tabela do Campeonato Brasileiro de Futebol,
+na ordem de colocação. Depois mostre:
 
-Seu programa deverá ler um número pelo teclado (entre 0 e 20) e mostrá-lo por extenso.
+A) Apenas os 5 primeiros colocados.
+B) Os últimos 4 colocados da tabela.
+c) Uma lista com os times em ordem alfabética.
+D) Em que posição na tabela está o time da Chapecoense.
 """
-porExtenso = ('Zero','Um','Dois','Três','Quatro','Cinco','Seis','Sete','Oito','Nove',
-'Dez','Onze','Doze','Treze','Quatorze','Quinze','Dezesseis','Dezessete','Dezoito',
-'Dezenove','Vinte')
 
-escolha = int(input('Qual número você deseja ver por extenso? '))
-while escolha < 0 or escolha > 20:
-    print('Tente novamente.')
-    escolha = int(input('Qual número você deseja ver por extenso? '))
-print(f'Você digitou o número {porExtenso[escolha]}')
+primeiroDaLista = segundoDaLista = ''
+
+classificacao = ('Palmeiras', 'Flamengo','Internacional','Grêmio',
+                'São Paulo','Atlético','Athletico-PR','Cruzeiro','Botafogo','Santos',
+                'Bahia','Fluminense','Corinthians','Chapecoense','Ceará','Vasco','Sport',
+                'América-MG','Vitória','Paraná')
+tamanho = len(classificacao)
+print('==== PRIMEIROS COLOCADOS ====') # PRIMEIROS COLOCADOS
+for posicao in range(0,5):
+    print(f'{posicao+1}º Lugar: {classificacao[posicao]}')
+print('---'*6)
+print('==== ÚLTIMOS COLOCADOS ====') # ÚLTIMOS COLOCADOS
+for posicao in range(tamanho-1,tamanho-5,-1):
+    print(f'{posicao+1}º Lugar: {classificacao[posicao]}')
+print('---'*6)
+
+print(f'Em ordem alfabética: {sorted(classificacao)}') # Ordem alfabética
+
+posicaoChapecoense = classificacao.index('Chapecoense')
+print(f'\nA Chapecoense está na {posicaoChapecoense+1}ª posição.') # POSIÇÃO DA CHAPECOENSE

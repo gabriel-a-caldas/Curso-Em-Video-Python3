@@ -1,27 +1,25 @@
 """
-Desenvolva um  programa que leia quatro valores pelo teclado
-e guarde-os em uma tupla. No final, mostre:
+Crie um programa que tenha uma tupla única com nomes de produtos e seus
+respectivos preços, na sequência.
 
-A) Quantas vezes apareceu o valor 9.
-B) Em que posição foi digitado o primeiro valor 3.
-C) Quais forma os números pares.
+No final mostre uma listagem de preços, organizando os dados em forma tabular.
 """
 
-tupla = tuple(int(input('Digite um valor: ')) for i in range(1,5))
-
-verificaValorNove = tupla.count(9)
-
-print(f'Você digitou os valores: {tupla}')
-
-print(f'O valor 9 apareceu {verificaValorNove} vezes.')
-    
-if 3 in tupla:
-    print(f'O valor 3 foi digitado {tupla.index(3)+1}ª posição.')
-else:
-    print('O valor 3 não foi digitado em nenhuma posição.')
-    
-print(f'Os valores pares digitados foram:',end=' ')
-
-for i, item in enumerate(tupla):
-    if item%2==0:
-        print(item,end=' ')
+listagem = ('Lapis', 0.99,
+            'Borracha', 2,
+            'Caderno', 20,
+            'Estojo', 12,
+            'Mochila', 150,
+            'Compasso', 7.99,
+            'Caneta', 1.99,
+            'Corretivo', 3.99,
+            'Lapiseira', 5.99
+            )
+print('-'*30)
+print(f'{"LISTAGEM DE PREÇOS":^30}')
+print('-'*30)
+for posicao in range(0,len(listagem)):
+    if posicao % 2 == 0:
+        print(f'{listagem[posicao]:.<30}',end='')
+    else:
+        print(f'R$ {listagem[posicao]:>7.2f}')

@@ -9,7 +9,6 @@ Crie um programa que leia dois valores e mostre um menu na tela:
 Seu programa deverá realizar a operação solicitada em cada caso.
 """
 from os import system
-from re import S
 from time import sleep
 
 system('cls')

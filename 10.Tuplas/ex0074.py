@@ -1,12 +1,27 @@
 """
-Crie um programa aleatório que vai gerar cinco números aleatórios e colocar em uma tupla.
-Depois disso, mostre a listagem de números gerados e também indique o menor e o maior valor
-que estão na tupla
+Desenvolva um  programa que leia quatro valores pelo teclado
+e guarde-os em uma tupla. No final, mostre:
+
+A) Quantas vezes apareceu o valor 9.
+B) Em que posição foi digitado o primeiro valor 3.
+C) Quais forma os números pares.
 """
-from random import randrange
 
-tuplaAleatoria = (randrange(0,1000),randrange(0,1000),randrange(0,1000),randrange(0,1000),randrange(0,1000))
+tupla = tuple(int(input('Digite um valor: ')) for i in range(1,5))
 
-print(f'Tupla: {tuplaAleatoria}.')
-print(f'O maior valor foi: {max(tuplaAleatoria)}.')
-print(f'O menor valor foi: {min(tuplaAleatoria)}.')
+verificaValorNove = tupla.count(9)
+
+print(f'Você digitou os valores: {tupla}')
+
+print(f'O valor 9 apareceu {verificaValorNove} vezes.')
+    
+if 3 in tupla:
+    print(f'O valor 3 foi digitado {tupla.index(3)+1}ª posição.')
+else:
+    print('O valor 3 não foi digitado em nenhuma posição.')
+    
+print(f'Os valores pares digitados foram:',end=' ')
+
+for i, item in enumerate(tupla):
+    if item%2==0:
+        print(item,end=' ')
