@@ -3,22 +3,30 @@ Crie um programa onde o usuário possa digitar vários valores numéricos e cada
 uma lista. Caso o número já exista lá dentro, ele não será adicionado. No final, serão
 exibidos todos os valores únicos digitados, em ordem crescente.
 """
-listaAleatoria = []
-resposta = 'S'
+
+from os import system
+from time import sleep
+
+listaAleatoria = list()
 
 while True:
-    if resposta == 'N':
-        break
-    if resposta == 'S':
-        valorDigitado = listaAleatoria.append(int(input('Digite um número: ')))
-        
-        ultimoValorDaLista = listaAleatoria[len(listaAleatoria)-1]
+    elementoDaLista = int(input('Digite um número: '))
 
-        if valorDigitado == ultimoValorDaLista:
-            print('Valor duplicado! Não vou adicionar...')
-            listaAleatoria.pop()
-            resposta = input('Deseja continuar? [S/N] ').strip().upper()
-        resposta = input('Deseja continuar? [S/N] ').strip().upper()
+    if elementoDaLista not in listaAleatoria:
+        listaAleatoria.append(elementoDaLista)
+        print('Computando valor...')
+        
+        sleep(2)
+        system('cls')
+
+        print('Valor computador.')
     else:
-        print('Esta opção não é válida. ')
-        resposta = input('Deseja continuar? [S/N] ').strip().upper()
+        print('Numero duplicado! Não vou adicionar...')
+        
+        sleep(3)
+        system('cls')
+
+    resposta = str(input('Deseja continuar? [S/N] '))
+    if resposta in 'Nn':
+        break
+print(listaAleatoria)
