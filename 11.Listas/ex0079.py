@@ -10,6 +10,7 @@ aux = 0
 
 listaOrdenada = list()
 
+<<<<<<< HEAD
 for contador in range(0,5):
 
     numeroLista = int(input('Insira um número: '))
@@ -27,3 +28,5 @@ for contador in range(0,5):
             posicao += 1
 print(f'Os valores adicionados na lista foram: {listaOrdenada}')
         
+=======
+>>>>>>> fc8249430c2a326fc67c08af7b10f8a8a29ca2a5

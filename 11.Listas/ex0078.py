@@ -12,7 +12,6 @@ listaAleatoria = list()
 while True:
     elementoDaLista = int(input('Digite um número: '))
 
-
     if elementoDaLista not in listaAleatoria:
         listaAleatoria.append(elementoDaLista)
         print('Computando valor...')
