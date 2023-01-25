@@ -29,5 +29,5 @@ while True:
     resposta = str(input('Deseja continuar? [S/N] '))
     if resposta in 'Nn':
         break
-listaAleatoria.sort() # Organia a lista em ordem crescente.
+listaAleatoria.sort() # Organiza a lista em ordem crescente.
 print(f'A lista digitada foi: {listaAleatoria}.')
