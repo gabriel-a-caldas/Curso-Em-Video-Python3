@@ -7,38 +7,38 @@ B) Uma listagem com as pessoas mais pesadas.
 C) Uma listagem com as pessoas mais leves.
 
 """
-
 cadastroPessoas = list()
 totalPessoas = list()
-pessoasMaisLeves = list()
-pessoasMaisPesadas = list()
-
-resposta = 'Ss'
-contadorTotalPessoas = contadorMaisPesadas = contadorMenosPesadas = 0
-maior = menor = 0
-
+maiorPeso = menorPeso = 0
 
 while True:
-    
+
     cadastroPessoas.append(str(input('Nome: ')).strip())
-    cadastroPessoas.append(str(input('Peso: ')).strip())
-    contadorTotalPessoas += 1
+    cadastroPessoas.append(int(input('Peso: ')))
+
     totalPessoas.append(cadastroPessoas[:])
+
+    if len(totalPessoas) == 1:
+        maior = menor = cadastroPessoas[1]
+    else:
+        if maior < cadastroPessoas[1]:
+            maior = cadastroPessoas[1]
+        if menor > cadastroPessoas[1]:
+            menor = cadastroPessoas[1]
+
     cadastroPessoas.clear()
 
     resposta = str(input('Deseja continuar? [S/N] '))
-    
+
     if resposta in 'Nn':
         break
-
-for posicao, pessoas in enumerate(totalPessoas):
-    if posicao == 0:
-        maior = menor = 0
-    if totalPessoas[posicao][1] > totalPessoas[posicao][1]:
-        maior = totalPessoas[posicao][1]
-        contadorMaisPesadas += 1
-    elif totalPessoas[posicao][1] < totalPessoas[posicao][1]:
-        menor = totalPessoas[posicao][1]
-        contadorMenosPesadas += 1
-
-print(f'Foram cadastradas: {contadorTotalPessoas} pessoas em nosso sistema.')
+    
+print(f'Ao todo, você cadsatrou: {len(totalPessoas)} pessoas.')
+print(f'O maior peso foi de {maior} kg. Peso de: ',end='')
+for pessoas in totalPessoas:
+    if maior == pessoas[1]:
+        print(f'[{pessoas[0]}]',end=' ')
+print(f'\nO menor peso foi de {menor} kg. Peso de: ',end='')
+for pessoas in totalPessoas:
+    if menor == pessoas[1]:
+        print(f'[{pessoas[0]}]',end=' ')
