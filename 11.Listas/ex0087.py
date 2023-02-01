@@ -6,6 +6,7 @@ entre 1 e 60 para cada jogo, cadastrando tudo em uma lista copmposta.
 
 from random import randint
 from os import system
+from time import sleep
 
 jogosMegaSena = []
 jogoUnicoSorteado = []
@@ -30,6 +31,7 @@ print('-=-=-=')
 
 for jogos in range(0,numeroDeJogos):
     print(f'Jogo {jogos+1}: {jogosMegaSena[jogos]}')
+    sleep(0.8)
 print('-=-='*3,end='')
 print('  < BOA SORTE >  ',end='')
 print('-=-='*3)
