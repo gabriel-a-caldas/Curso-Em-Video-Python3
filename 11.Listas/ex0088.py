@@ -9,13 +9,14 @@ from os import system
 cadastroAlunos = []
 cadastroNotas = []
 totalAlunos = []
+mediaDosAlunos = []
 media = 0
 
 while True:
 
     nome = str(input('Nome: ')).strip()
-    notaUm = int(input('Nota 1: '))
-    notaDois = int(input('Nota 2: '))
+    notaUm = float(input('Nota 1: '))
+    notaDois = float(input('Nota 2: '))
 
     cadastroAlunos.append(nome)
     cadastroNotas.append(notaUm)
@@ -26,6 +27,10 @@ while True:
 
     cadastroAlunos.clear()
     cadastroNotas.clear()
+    
+    media = (notaUm + notaDois)/2
+
+    mediaDosAlunos.append(media)
 
     resposta = str(input('Quer continuar? [S/N] ')).strip()
 
@@ -34,5 +39,11 @@ while True:
 
 system('cls')
 
+print('-=-='*15)
+print('Nº   NOME         MEDIA')
+print('-'*20)
 
+for alunos in totalAlunos:
+    posicao = totalAlunos.index(alunos)
+    print(f'{posicao}     {alunos[0]}         {mediaDosAlunos[posicao]}')
 
