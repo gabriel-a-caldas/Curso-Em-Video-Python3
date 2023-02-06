@@ -8,11 +8,7 @@ from time import sleep
 
 system('cls')
 
-cadastroAlunos = []
-cadastroNotas = []
 totalAlunos = []
-totalNotas = []
-mediaDosAlunos = []
 media = 0
 
 while True:
@@ -21,21 +17,10 @@ while True:
     notaUm = float(input('Nota 1: '))
     notaDois = float(input('Nota 2: '))
 
-    cadastroAlunos.append(nome)
-    cadastroNotas.append(notaUm)
-    cadastroNotas.append(notaDois)
-    cadastroAlunos.append(cadastroNotas[:])
-    
-    totalAlunos.append(cadastroAlunos[:])
-    totalNotas.append(cadastroNotas[:])
-
-    cadastroAlunos.clear()
-    cadastroNotas.clear()
-    
     media = (notaUm + notaDois)/2
 
-    mediaDosAlunos.append(media)
-
+    totalAlunos.append([nome,[notaUm, notaDois], media])
+    
     resposta = str(input('Quer continuar? [S/N] ')).strip()
 
     if resposta in 'Nn':
@@ -44,20 +29,20 @@ while True:
 system('cls')
 
 print('-=-='*10)
-print('Nº   NOME         MEDIA')
+print(f'{"Nº":<6}{"NOME":<10}{"MEDIA":>8}')
 print('-'*40)
 
 for alunos in totalAlunos:
     posicaoAlunos = totalAlunos.index(alunos)
-    print(f'{posicaoAlunos}     {alunos[0]}     {mediaDosAlunos[posicaoAlunos]}')
+    print(f'{posicaoAlunos:<6}{alunos[0]:<10}{alunos[2]:>8}')
 
 escolha = int(input('Mostrar notas de qual aluno? (999 interrompe): '))
 
 while escolha != 999:
-    print(f'Notas de {totalAlunos[escolha][0]} são {totalNotas[escolha]}')
+    print(f'Notas de {totalAlunos[escolha][0]} são {totalAlunos[escolha][1]}')
     escolha = int(input('Mostrar notas de qual aluno? (999 interrompe): '))
 
-sleep(2)
+sleep(1)
 
 print('FINALIZANDO...')
 print('<<< VOLTE SEMPRE >>>')
