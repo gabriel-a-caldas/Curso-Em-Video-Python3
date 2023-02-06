@@ -3,12 +3,15 @@ Crie um programa que leia nome e duas notas de vários alunos e guarde tudo em u
 lista compsosta. No final, mostre um boletim contendo a média de cada um e permita
 que o usuário possa mostrar as notas de cada aluno individualmente.
 """
-
 from os import system
+from time import sleep
+
+system('cls')
 
 cadastroAlunos = []
 cadastroNotas = []
 totalAlunos = []
+totalNotas = []
 mediaDosAlunos = []
 media = 0
 
@@ -24,6 +27,7 @@ while True:
     cadastroAlunos.append(cadastroNotas[:])
     
     totalAlunos.append(cadastroAlunos[:])
+    totalNotas.append(cadastroNotas[:])
 
     cadastroAlunos.clear()
     cadastroNotas.clear()
@@ -39,11 +43,21 @@ while True:
 
 system('cls')
 
-print('-=-='*15)
+print('-=-='*10)
 print('Nº   NOME         MEDIA')
-print('-'*20)
+print('-'*40)
 
 for alunos in totalAlunos:
-    posicao = totalAlunos.index(alunos)
-    print(f'{posicao}     {alunos[0]}         {mediaDosAlunos[posicao]}')
+    posicaoAlunos = totalAlunos.index(alunos)
+    print(f'{posicaoAlunos}     {alunos[0]}     {mediaDosAlunos[posicaoAlunos]}')
 
+escolha = int(input('Mostrar notas de qual aluno? (999 interrompe): '))
+
+while escolha != 999:
+    print(f'Notas de {totalAlunos[escolha][0]} são {totalNotas[escolha]}')
+    escolha = int(input('Mostrar notas de qual aluno? (999 interrompe): '))
+
+sleep(2)
+
+print('FINALIZANDO...')
+print('<<< VOLTE SEMPRE >>>')
