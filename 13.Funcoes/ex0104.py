@@ -5,17 +5,3 @@ apenas um valor numérico.
 """
 from os import system
 
-def leiaInt(numero):
-
-    while not numero.isnumeric():
-        print('ERRO! Digite um valor válido')
-        numero = str(input('Digite um número: ')).strip()
-    if numero.isnumeric():
-        print(f'Você acabou de digitar {numero}')
-
-
-# Programa principal
-system('cls')
-numero = str(input('Digite um número: '))
-
-leiaInt(numero)
